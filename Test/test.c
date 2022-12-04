@@ -6,16 +6,31 @@ Date: 11/20/2022
 */
 
 #include <stdio.h>
+#define BITS sizeof(int) * 8
 
 int main(int argc, char *argv[])
 {
-    int numberOfArrguments = argc;
-    char *argument1 = argv[0];
-    char *argument2 = argv[1];
+    int num = atoi(argv[1]);
+    int n = atoi(argv[2]);
 
-    printf("Number of Arguments: %d\n", numberOfArrguments);
-    printf("Argument 1 is the program name: %s\n", argument1);
-    printf("Argument 2 is the command line argument: %s\n", argument2);
+    int ones = 0, zeros = 0;
+
+
+    for (int i = 0; i < BITS; i++)
+    {
+        if((1 << i) & num)
+            ones++;
+        else
+            zeros++;
+
+    }
+    _Bool test = ((1 == 2) != 3);
+
+    printf("test value : %d\n", test);
+
+        printf("Output number of ones: %d\n", ones);
+        printf("Output number of zeros: %d", zeros);
+
 
     return 0;
 }
