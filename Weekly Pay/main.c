@@ -22,9 +22,12 @@ int main()
         if (gross <= 300.0){
             taxes = TAXRATE_300 * gross;
         } else if (gross > 300.0 && gross <= 450.0) {
-            taxes = TAXRATE_300 * gross;
+            taxes = TAXRATE_300 * 300;
+            taxes += TAXRATE_150 * (gross - 300);
         } else {
-            taxes = TAXRATE_REST * gross;
+            taxes = TAXRATE_300 * 300;
+            taxes += TAXRATE_150 * 150;
+            taxes += TAXRATE_REST * (gross - 450);
         }
         net_pay = gross - taxes;
     } else {
@@ -33,9 +36,12 @@ int main()
         if (gross <= 300){
             taxes = TAXRATE_300 * gross;
         } else if (gross > 300 && gross <= 450) {
-            taxes = TAXRATE_150 * gross;
+            taxes = TAXRATE_300 * 300;
+            taxes += TAXRATE_150 * (gross - 300);
         } else {
-            taxes = TAXRATE_REST * gross;
+            taxes = TAXRATE_300 * 300;
+            taxes += TAXRATE_150 * 150;
+            taxes += TAXRATE_REST * (gross - 450);
         }
         net_pay = gross - taxes;
     }
