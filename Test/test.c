@@ -8,23 +8,16 @@
 
 int main()
 {
-    enum Weekday {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday};
-    enum Weekday today = Wednesday;
+    unsigned long long sum = 0;
+    unsigned int count = 0;
 
-    switch(today)
-    {
-    case Sunday:
-        printf("Today is Sunday.");
-        break;
-    case Monday:
-        printf("Today is Monday.");
-        break;
-    case Tuesday:
-        printf("Today is Tuesday.");
-        break;
-    default:
-        printf("Whatever");
-        break;
-    }
+    printf("\nEnter the number of integers you want to sum: ");
+    scanf("%u", &count);
+
+    for(unsigned int i = 1; i <= count; ++i)
+        sum += i;
+
+    printf("\nTotal of the first %u numbers is %u\n", count, sum);
+
     return 0;
 }

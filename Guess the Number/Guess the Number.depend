@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1670543960 source:c:\users\acer\c_practice\guess the number\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
