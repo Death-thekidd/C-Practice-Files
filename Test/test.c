@@ -1,23 +1,19 @@
+#include <stdio.h>
+#define MONTHS 12
+
 /**
 * main - Starting point
 * Purpose: This program prints out my name to the screen
 * Date: 11/20/2022
 */
 
-#include <stdio.h>
-
 int main()
 {
-    unsigned long long sum = 0;
-    unsigned int count = 0;
+    int days[MONTHS] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int index;
 
-    printf("\nEnter the number of integers you want to sum: ");
-    scanf("%u", &count);
-
-    for(unsigned int i = 1; i <= count; ++i)
-        sum += i;
-
-    printf("\nTotal of the first %u numbers is %u\n", count, sum);
+    for (index = 0; index < MONTHS; index++)
+        printf("Month %d has %2d days.\n", index + 1, days[index]);
 
     return 0;
 }
