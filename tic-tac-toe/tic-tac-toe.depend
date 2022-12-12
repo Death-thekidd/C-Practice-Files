@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1670870849 source:c:\users\acer\c_practice\tic-tac-toe\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
