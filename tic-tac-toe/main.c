@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#define BEEP '\a'
 
 char arr[3][4] =
 {
@@ -31,7 +32,7 @@ int main()
 void drawBoard(char v[3][4])
 {
     system("cls");
-    printf("\tTic Tac Toe\n");
+    printf("\n\n\tTic Tac Toe\n");
     printf("\nPlayer 1(x) - Player 2 (o)\n\n");
     printf("     |     |\n");
     printf("  %c  |  %c  |  %c\n", v[0][1], v[0][2], v[0][3]);
@@ -100,7 +101,7 @@ void markBoard(void)
             {
                 drawBoard(arr);
                 draw = false;
-                printf("\n==>Player 1 win\n");
+                printf("%c\n==>Player 1 win\n", BEEP);
                 break;
             }
             else
@@ -146,7 +147,7 @@ void markBoard(void)
             {
                 drawBoard(arr);
                 draw = false;
-                printf("\n==>Player 2 wins\n");
+                printf("%c\n==>Player 2 wins\n", BEEP);
                 break;
             }
             else
@@ -154,7 +155,7 @@ void markBoard(void)
         }
     }
     if(draw)
-        printf("\n==>It's a draw!");
+        printf("%c\n==>It's a draw!", BEEP);
 }
 
 /**
@@ -196,6 +197,16 @@ int checkForWin(void)
             if (arr[k][k + 1] != i)
                 continue;
             else if (arr[k][k + 1] == i)
+                track++;
+        }
+        if (track == 3)
+            return (1);
+
+        for (track = 0, k = 0, m = 3; k < 3; k++, m--)
+        {
+            if (arr[k][m] != i)
+                continue;
+            else if (arr[k][m] == i)
                 track++;
         }
         if (track == 3)
