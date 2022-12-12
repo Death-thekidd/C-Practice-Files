@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1670852036 source:c:\users\acer\c_practice\functions\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
